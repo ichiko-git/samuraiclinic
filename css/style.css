@@ -1002,6 +1002,51 @@ a:hover {
   color: var(--color-dark-green);
 }
 
+/* price.html */
+.price {
+  background-color: #fafafa;
+}
+.container__price {
+  padding: 64px 242px;
+}
+.course__subtitle {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--color-moss-green);
+}
+.course__items {
+  margin-top: 64px;
+  display: flex;
+  gap: 80px;
+}
+.course__item-img {
+  width: 100%;
+  border-radius: 24px;
+}
+.course__item-desc {
+  margin-top: 32px;
+}
+.course__item-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--color-dark-green);
+}
+.course__item-lists {
+  margin-top: 24px;
+  padding-left: 16px;
+  list-style-position: inside;
+}
+.course__item-list {
+  margin-bottom: 13px;
+  font-size: 18px;
+}
+.course__item-list:last-child {
+  margin-bottom: 0;
+}
+
 /* スマートフォン用（768px以下） */
 @media screen and (max-width: 768px) {
   /* 共通パーツ */
@@ -1351,5 +1396,11 @@ a:hover {
   }
   .point__item-title {
     font-size: 18px;
+  }
+
+  /* price.html */
+  /* コース・料金 */
+  .container__price {
+    padding: 32px 16px;
   }
 }
