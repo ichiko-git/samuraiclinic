@@ -315,6 +315,33 @@ a:hover {
   border-bottom: 1px dashed var(--color-moss-green);
 }
 
+/* ぱんくずリスト */
+.topnav {
+  width: 100%;
+  height: 64px;
+  padding-left: 152px;
+}
+.topnav__list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+}
+.topnav__item {
+  font-size: 14px;
+}
+.topnav__item::after {
+  content: ">";
+  font-weight: bold;
+  margin-left: 2px;
+}
+.topnav__item:last-child::after {
+  content: none;
+}
+
 /* メインビジュアル */
 .mv {
   height: 584px;
@@ -818,6 +845,7 @@ a:hover {
   width: 100%;
   height: 100%;
 }
+
 /* フッター */
 .footer__contents {
   display: flex;
@@ -854,299 +882,478 @@ a:hover {
 }
 
 /* about.html */
+/* フロー */
+.flow {
+  padding-top: 120px;
+  padding-bottom: 150px;
+  background-image: url(../images/top/TOP-BGicon_Light.png);
+  background-position: right -50px bottom;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.container__flow {
+  display: flex;
+  gap: 80px;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+.imagegroup {
+  width: 400px;
+  height: 507px;
+  position: relative;
+}
+.imagegroup-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 23px;
+  box-shadow: 2px 8px 24px rgba(0, 0, 0, 0.15);
+}
+.image__main {
+  width: 291px;
+  height: 379px;
+  position: absolute;
+  left: 0;
+  top: 57px;
+}
+.image__sub1 {
+  width: 146px;
+  height: 146px;
+  position: absolute;
+  right: 65px;
+  top: 0;
+}
+.image__sub2 {
+  width: 146px;
+  height: 189px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.flow__content {
+  width: 320px;
+}
+.flow__header--en {
+  color: var(--color-moss-green);
+  font-weight: bold;
+  font-size: 24px;
+  position: relative;
+}
+.flow__header--en::before {
+  content: "";
+  display: inline-block;
+  background-image: url(../images/top/TOP-Head_Icon.png);
+  color: var(--color-moss-green);
+  width: 22px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.flow__header--en::after {
+  content: "Flow";
+  color: #f7f9f7;
+  font-family: var(--font-family-merriweather);
+  font-weight: normal;
+  font-size: 130px;
+  position: absolute;
+  top: 60px;
+  left: -100px;
+  z-index: -1;
+}
+.flow__header--ja {
+  margin-top: 10px;
+  color: var(--color-moss-green);
+  font-size: 24px;
+}
+.flow__list {
+  margin-top: 108px;
+  list-style-position: inside;
+}
+.flow__item {
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+/* 根本改善のポイント */
+.container__point {
+  padding: 62px 112px 97px 112px;
+}
+.point__subtitle {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--color-moss-green);
+}
+.point__items {
+  margin-top: 64px;
+  display: flex;
+  gap: 48px;
+}
+.point__item-img {
+  width: 100%;
+  border-radius: 24px;
+}
+.point__item-desc {
+  margin-top: 32px;
+  text-align: center;
+}
+.point__item-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--color-dark-green);
+}
 
 /* スマートフォン用（768px以下） */
 @media screen and (max-width: 768px) {
-  body {
-    /* 共通パーツ */
-    .h2__title {
-      font-size: 18px;
-    }
-    .h2__title::before {
-      width: 14px;
-      height: 22px;
-    }
-    .h2__title::after {
-      width: 14px;
-      height: 22px;
-    }
+  /* 共通パーツ */
+  .h2__title {
+    font-size: 18px;
+  }
+  .h2__title::before {
+    width: 14px;
+    height: 22px;
+  }
+  .h2__title::after {
+    width: 14px;
+    height: 22px;
+  }
 
-    /* TOPに戻るボタン */
-    #back-btn {
-      width: 48px;
-      height: 48px;
-      border: solid 3px var(--color-moss-green);
-      bottom: 78px;
-      right: 18px;
-    }
-    .back-btn-arrow {
-      width: 18px;
-      height: 18px;
-      margin-top: -4px;
-      margin-left: -9px;
-    }
+  /* TOPに戻るボタン */
+  #back-btn {
+    width: 48px;
+    height: 48px;
+    border: solid 3px var(--color-moss-green);
+    bottom: 78px;
+    right: 18px;
+  }
+  .back-btn-arrow {
+    width: 18px;
+    height: 18px;
+    margin-top: -4px;
+    margin-left: -9px;
+  }
 
-    /* ヘッダー */
-    .header--top {
-      padding: 0 20px;
-    }
-    .header__logo {
-      max-width: 196px;
-    }
-    .header__nav {
-      display: none;
-    }
-    .header__hamburger--open {
-      display: block;
-    }
+  /* ヘッダー */
+  .header--top {
+    padding: 0 20px;
+  }
+  .header__logo {
+    max-width: 196px;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__hamburger--open {
+    display: block;
+  }
+  .header--sub {
+    padding: 0 20px;
+  }
 
-    /* サブビジュアル */
-    .subvisual {
-      height: 360px;
-      display: block;
+  /* サブビジュアル */
+  .subvisual {
+    height: 360px;
+    display: block;
 
-      background-image: url(../images/about/SP-subvisual-bg.png);
-      position: relative;
-    }
-    .subvisual__image {
-      width: calc(100% - 38px);
-      max-height: 300px;
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-    .subvisual__title {
-      margin-left: 0;
-      position: absolute;
-      left: 19px;
-      bottom: 19px;
-    }
-    .subvisual__title--en {
-      font-size: 28px;
-    }
-    .subvisual__title--ja {
-      font-size: 16px;
-      margin-top: 4px;
-    }
+    background-image: url(../images/about/SP-subvisual-bg.png);
+    position: relative;
+  }
+  .subvisual__image {
+    width: calc(100% - 38px);
+    max-height: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .subvisual__title {
+    margin-left: 0;
+    position: absolute;
+    left: 19px;
+    bottom: 19px;
+  }
+  .subvisual__title--en {
+    font-size: 28px;
+  }
+  .subvisual__title--ja {
+    font-size: 16px;
+    margin-top: 4px;
+  }
 
-    /* メインビジュアル */
-    .mv {
-      height: 500px;
-      background-image: url(../images/top/SP_TOP_mv-bg.png);
-    }
-    .mv__catch-text {
-      font-size: 22.4px;
-      top: 118.2px;
-      left: 34.56px;
-    }
-    /* Swiper カルーセル */
-    .swiper {
-      height: 500px !important;
-      width: calc(100% - 83px) !important;
-    }
-    .swiper-scrollbar {
-      width: 50px !important;
-      right: 20px !important;
-      bottom: 20px !important;
-    }
+  /* ぱんくずリスト */
+  .topnav {
+    height: 44px;
+    padding-left: 16px;
+  }
 
-    /* ニュース */
-    .news {
-      height: auto;
-      flex-direction: column;
-      gap: 20px;
-      padding: 18px 16px 20px 16px;
-    }
-    .news__title {
-      height: 100%;
-      display: flex;
-      gap: 10px;
-    }
-    .news__item > div {
-      flex-direction: column;
-      gap: 4px;
-    }
-    .news__item-title {
-      width: 170px;
-    }
-    .news__footer {
-      height: 32px;
-      justify-content: right;
-    }
+  /* メインビジュアル */
+  .mv {
+    height: 500px;
+    background-image: url(../images/top/SP_TOP_mv-bg.png);
+  }
+  .mv__catch-text {
+    font-size: 22.4px;
+    top: 118.2px;
+    left: 34.56px;
+  }
+  /* Swiper カルーセル */
+  .swiper {
+    height: 500px !important;
+    width: calc(100% - 83px) !important;
+  }
+  .swiper-scrollbar {
+    width: 50px !important;
+    right: 20px !important;
+    bottom: 20px !important;
+  }
 
-    /* コンセプト */
-    .concept {
-      padding: 64px 16px;
-      background-size: 240px 183px;
-      background-position: right -80px bottom;
-    }
-    .container__concept {
-      flex-direction: column;
-      gap: 32px;
-    }
-    .imagegroup {
-      width: 278px;
-      height: 315px;
-    }
-    .image__main {
-      width: 210px;
-      height: 233px;
-      top: 41px;
-    }
-    .image__sub1 {
-      width: 105px;
-      height: 105px;
-      right: 40px;
-    }
-    .image__sub2 {
-      width: 105px;
-      height: 136px;
-    }
-    .concept__content {
-      width: 100%;
-    }
-    .concept__header--en::after {
-      font-size: 72px;
-      top: -30px;
-      left: -45px;
-    }
-    .concept__header--ja {
-      font-size: 18px;
-    }
-    .concept__title {
-      font-size: 24px;
-      line-height: 44px;
-    }
-    .concept__title-br {
-      display: none;
-    }
-    .concept__subtitle {
-      margin-top: 32px;
-      line-height: 1.4;
-    }
-    .concept__link {
-      margin-top: 33px;
-      margin-right: auto;
-      font-size: 14px;
-    }
-    /* コース・料金 */
-    .course {
-      background-image: url(../images/top/SP-TOP-course-bg.png);
-    }
-    .course::before {
-      top: 140px;
-      left: 0;
-      font-size: 72px;
-    }
-    .container__course {
-      padding: 86px 16px 58px 16px;
-    }
-    .course__title {
-      font-size: 18px;
-    }
-    .course__title::before {
-      width: 14px;
-      height: 22px;
-    }
-    .course__title::after {
-      width: 14px;
-      height: 22px;
-    }
-    .course__subtitle {
-      font-size: 18px;
-      margin-top: 16px;
-    }
-    .course__items {
-      flex-direction: column;
-      gap: 40px;
-      margin-top: 40px;
-    }
-    .course__link {
-      margin-top: 40px;
-    }
-    .course::after {
-      width: 220px;
-      height: 183px;
-    }
-    /* お客様の声 */
-    .voice__head {
-      background-image: url(../images/top/SP-TOP-voice-Carouselgroup1.png);
-    }
-    .voice__subtract {
-      width: 231px;
-      height: 61px;
-      background-image: url(../images/top/SP-TOP-Subtract.png);
-    }
-    .container__voice {
-      top: -23px;
-    }
-    .voice__subtitle {
-      font-size: 18px;
-      margin-top: 32px;
-    }
-    .voice__items {
-      flex-direction: column;
-      margin-top: 32px;
-      text-align: center;
-      align-items: center;
-      gap: 48px;
-    }
-    .voice__item-image {
-      width: 160px;
-      height: 160px;
-    }
-    .voice__item-desc {
-      margin-top: 16px;
-    }
-    .voice__link {
-      margin-top: 32px;
-    }
-    /* アクセス */
-    .access {
-      background-image: url(../images/top/SP-TOP-course-bg.png);
-    }
-    .container__access {
-      padding: 60px 16px 40px 16px;
-    }
-    .access__contents {
-      flex-direction: column;
-      gap: 40px;
-    }
-    .access__content {
-      width: 100%;
-    }
-    .access__trans {
-      font-size: 18px;
-    }
-    .access__tel span {
-      font-size: 18px;
-    }
-    .access__table {
-      font-size: 10px;
-    }
-    .access__link {
-      width: 100%;
-      height: 48px;
-      line-height: 48px;
-      margin-top: 24px;
-      font-size: 14px;
-    }
-    .access__map {
-      width: 100%;
-      height: 236px;
-    }
-    /* フッター */
-    .footer__contents {
-      flex-direction: column;
-      height: auto;
-      padding-top: 31px;
-      padding-bottom: 40px;
-      gap: 40px;
-    }
-    .footer__nav-list {
-      flex-direction: column;
-      height: auto;
-      gap: 16px;
-    }
+  /* ニュース */
+  .news {
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+    padding: 18px 16px 20px 16px;
+  }
+  .news__title {
+    height: 100%;
+    display: flex;
+    gap: 10px;
+  }
+  .news__item > div {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .news__item-title {
+    width: 170px;
+  }
+  .news__footer {
+    height: 32px;
+    justify-content: right;
+  }
+
+  /* コンセプト */
+  .concept {
+    padding: 64px 16px;
+    background-size: 240px 183px;
+    background-position: right -80px bottom;
+  }
+  .container__concept {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .imagegroup {
+    width: 278px;
+    height: 315px;
+  }
+  .image__main {
+    width: 210px;
+    height: 233px;
+    top: 41px;
+  }
+  .image__sub1 {
+    width: 105px;
+    height: 105px;
+    right: 40px;
+  }
+  .image__sub2 {
+    width: 105px;
+    height: 136px;
+  }
+  .concept__content {
+    width: 100%;
+  }
+  .concept__header--en::after {
+    font-size: 72px;
+    top: -30px;
+    left: -45px;
+  }
+  .concept__header--ja {
+    font-size: 18px;
+  }
+  .concept__title {
+    font-size: 24px;
+    line-height: 44px;
+  }
+  .concept__title-br {
+    display: none;
+  }
+  .concept__subtitle {
+    margin-top: 32px;
+    line-height: 1.4;
+  }
+  .concept__link {
+    margin-top: 33px;
+    margin-right: auto;
+    font-size: 14px;
+  }
+
+  /* コース・料金 */
+  .course {
+    background-image: url(../images/top/SP-TOP-course-bg.png);
+  }
+  .course::before {
+    top: 140px;
+    left: 0;
+    font-size: 72px;
+  }
+  .container__course {
+    padding: 86px 16px 58px 16px;
+  }
+  .course__title {
+    font-size: 18px;
+  }
+  .course__title::before {
+    width: 14px;
+    height: 22px;
+  }
+  .course__title::after {
+    width: 14px;
+    height: 22px;
+  }
+  .course__subtitle {
+    font-size: 18px;
+    margin-top: 16px;
+  }
+  .course__items {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  .course__link {
+    margin-top: 40px;
+  }
+  .course::after {
+    width: 220px;
+    height: 183px;
+  }
+
+  /* お客様の声 */
+  .voice__head {
+    background-image: url(../images/top/SP-TOP-voice-Carouselgroup1.png);
+  }
+  .voice__subtract {
+    width: 231px;
+    height: 61px;
+    background-image: url(../images/top/SP-TOP-Subtract.png);
+  }
+  .container__voice {
+    top: -23px;
+  }
+  .voice__subtitle {
+    font-size: 18px;
+    margin-top: 32px;
+  }
+  .voice__items {
+    flex-direction: column;
+    margin-top: 32px;
+    text-align: center;
+    align-items: center;
+    gap: 48px;
+  }
+  .voice__item-image {
+    width: 160px;
+    height: 160px;
+  }
+  .voice__item-desc {
+    margin-top: 16px;
+  }
+  .voice__link {
+    margin-top: 32px;
+  }
+
+  /* アクセス */
+  .access {
+    background-image: url(../images/top/SP-TOP-course-bg.png);
+  }
+  .container__access {
+    padding: 60px 16px 40px 16px;
+  }
+  .access__contents {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .access__content {
+    width: 100%;
+  }
+  .access__trans {
+    font-size: 18px;
+  }
+  .access__tel span {
+    font-size: 18px;
+  }
+  .access__table {
+    font-size: 10px;
+  }
+  .access__link {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    margin-top: 24px;
+    font-size: 14px;
+  }
+  .access__map {
+    width: 100%;
+    height: 236px;
+  }
+
+  /* フッター */
+  .footer__contents {
+    flex-direction: column;
+    height: auto;
+    padding-top: 31px;
+    padding-bottom: 40px;
+    gap: 40px;
+  }
+  .footer__nav-list {
+    flex-direction: column;
+    height: auto;
+    gap: 16px;
+  }
+
+  /* about.html */
+  /* フロー */
+  .flow {
+    padding: 64px 16px;
+    background-size: 240px 183px;
+    background-position: right -80px bottom;
+  }
+  .container__flow {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .flow__content {
+    width: 100%;
+  }
+  .flow__header--en::after {
+    font-size: 72px;
+    top: -30px;
+    left: -45px;
+  }
+  .flow__header--ja {
+    font-size: 18px;
+  }
+  .flow__list {
+    margin-top: 32px;
+  }
+
+  /* 根本改善のポイント */
+  .container__point {
+    padding: 32px 16px;
+  }
+  .point__subtitle {
+    margin-top: 16px;
+    font-size: 18px;
+  }
+  .point__items {
+    margin-top: 32px;
+    flex-direction: column;
+  }
+  .point__item-desc {
+    margin-top: 16px;
+  }
+  .point__item-title {
+    font-size: 18px;
   }
 }
