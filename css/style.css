@@ -607,7 +607,12 @@ a:hover {
 .course__items {
   margin-top: 64px;
   display: flex;
+  justify-content: center;
   gap: 80px;
+}
+.course__item-image {
+  width: 360px;
+  height: 300px;
 }
 .course__item-img {
   width: 100%;
@@ -1007,44 +1012,125 @@ a:hover {
   background-color: #fafafa;
 }
 .container__price {
-  padding: 64px 242px;
+  padding: 64px 16px;
 }
-.course__subtitle {
-  text-align: center;
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 1.25;
-  color: var(--color-moss-green);
-}
-.course__items {
-  margin-top: 64px;
+
+/* 保険診療 */
+.container__insurance {
+  padding: 60px 16px;
   display: flex;
-  gap: 80px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  gap: 60px;
 }
-.course__item-img {
+.insurance__image {
+  width: 520px;
+  height: 320px;
+}
+.insurance__img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 24px;
 }
-.course__item-desc {
-  margin-top: 32px;
+.insurance__content {
+  max-width: 385px;
 }
-.course__item-title {
+.insurance__header--en {
+  color: var(--color-moss-green);
   font-weight: bold;
   font-size: 24px;
-  color: var(--color-dark-green);
 }
-.course__item-lists {
-  margin-top: 24px;
-  padding-left: 16px;
+.insurance__header--en::before {
+  content: "";
+  display: inline-block;
+  background-image: url(../images/top/TOP-Head_Icon.png);
+  color: var(--color-moss-green);
+  width: 22px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.insurance__header--ja {
+  margin-top: 10px;
+  color: var(--color-moss-green);
+  font-size: 24px;
+}
+.insurance__desc {
+  margin-top: 32px;
+  line-height: 1.4;
+}
+.insurance__list {
+  margin-top: 32px;
+}
+.insurance__item {
+  margin-left: 16px;
+  margin-bottom: 16px;
+  line-height: 1.4;
   list-style-position: inside;
 }
-.course__item-list {
-  margin-bottom: 13px;
-  font-size: 18px;
+
+/* 自費診療 */
+.container__selfpay {
+  padding: 60px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  gap: 60px;
 }
-.course__item-list:last-child {
-  margin-bottom: 0;
+.selfpay__image {
+  width: 520px;
+  height: 320px;
+}
+.selfpay__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+.selfpay__content {
+  max-width: 385px;
+}
+.selfpay__header--en {
+  color: var(--color-moss-green);
+  font-weight: bold;
+  font-size: 24px;
+}
+.selfpay__header--en::before {
+  content: "";
+  display: inline-block;
+  background-image: url(../images/top/TOP-Head_Icon.png);
+  color: var(--color-moss-green);
+  width: 22px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.selfpay__header--ja {
+  margin-top: 10px;
+  color: var(--color-moss-green);
+  font-size: 24px;
+}
+.selfpay__desc {
+  margin-top: 32px;
+  line-height: 1.4;
+}
+.selfpay__list {
+  margin-top: 32px;
+}
+.selfpay__item {
+  margin-left: 16px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  list-style-position: inside;
+}
+.selfpay__price {
+  margin-top: 32px;
+  line-height: 1.4;
 }
 
 /* スマートフォン用（768px以下） */
@@ -1261,6 +1347,10 @@ a:hover {
     gap: 40px;
     margin-top: 40px;
   }
+  .course__item-image {
+    width: 100%;
+    height: 220px;
+  }
   .course__link {
     margin-top: 40px;
   }
@@ -1402,5 +1492,45 @@ a:hover {
   /* コース・料金 */
   .container__price {
     padding: 32px 16px;
+  }
+
+  /* 保険診療 */
+  .container__insurance {
+    padding: 32px 16px;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .insurance__image {
+    width: 100%;
+    height: 160px;
+  }
+  .insurance__content {
+    width: 100%;
+  }
+  .insurance__header--ja {
+    font-size: 18px;
+  }
+  .insurance__item {
+    margin-bottom: 12px;
+  }
+
+  /* 自費診療 */
+  .container__selfpay {
+    padding: 32px 16px;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .selfpay__image {
+    width: 100%;
+    height: 160px;
+  }
+  .selfpay__content {
+    width: 100%;
+  }
+  .selfpay__header--ja {
+    font-size: 18px;
+  }
+  .selfpay__item {
+    margin-bottom: 12px;
   }
 }
