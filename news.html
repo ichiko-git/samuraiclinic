@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="SAMURAI整体院のサイトです。" />
+    <title>お知らせ - SAMURAI整体院</title>
+    <!-- googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho&display=swap"
+      rel="stylesheet"
+    />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header class="header--sub">
+      <h1 class="header__logo">
+        <a href="index.html">
+          <img
+            src="images/top/logo.svg"
+            alt="SAMURAI整体院のロゴ"
+            class="header__logo-img"
+          />
+        </a>
+      </h1>
+      <!-- ハンバーガーメニュー -->
+      <button class="header__hamburger--open" aria-label="メニューを開く">
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+      </button>
+      <!-- PC用ナビゲーション -->
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="index.html" class="header__nav-link">ホーム</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="about.html" class="header__nav-link">当院について</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="price.html" class="header__nav-link">コース・料金</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="news.html" class="header__nav-link">お知らせ</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="voice.html" class="header__nav-link">お客様の声</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="contact.html" class="header__nav-link btn btn--reserve"
+              >ご予約・お問い合わせ</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!-- ドロワーメニュー -->
+      <nav class="header__drawer">
+        <div class="header__drawer-menu">
+          <h1 class="header__logo">
+            <a href="index.html">
+              <img
+                src="images/top/logo.svg"
+                alt="SAMURAI整体院のロゴ"
+                class="header__logo-img"
+              />
+            </a>
+          </h1>
+          <button
+            class="header__hamburger--close"
+            aria-label="メニューを閉じる"
+          >
+            <span class="header__hamburger-line"></span>
+            <span class="header__hamburger-line"></span>
+          </button>
+        </div>
+        <p class="header__drawer-title">メニュー</p>
+        <ul class="header__drawer-list">
+          <li class="header__drawer-item">
+            <a href="index.html" class="header__drawer-link">ホーム</a>
+          </li>
+          <li class="header__drawer-item">
+            <a href="about.html" class="header__drawer-link">当院について</a>
+          </li>
+          <li class="header__drawer-item">
+            <a href="price.html" class="header__drawer-link">コース・料金</a>
+          </li>
+          <li class="header__drawer-item">
+            <a href="news.html" class="header__drawer-link">お知らせ</a>
+          </li>
+          <li class="header__drawer-item">
+            <a href="voice.html" class="header__drawer-link">お客様の声</a>
+          </li>
+          <li class="header__drawer-item">
+            <a href="contact.html" class="header__drawer-link btn btn--reserve"
+              >ご予約・お問い合わせ</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="overlay"></div>
+    </header>
+    <main>
+      <!-- サブビジュアル -->
+      <div class="subvisual">
+        <div class="subvisual__title">
+          <h1 class="subvisual__title--en">Infomation</h1>
+          <p class="subvisual__title--ja">お知らせ</p>
+        </div>
+        <div class="subvisual__image">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="images/news/SP-NEWS-subvisual.png"
+            />
+            <img
+              src="images/news/NEWS-subvisual.png"
+              alt="お知らせ"
+              class="subvisual__image-img"
+            />
+          </picture>
+        </div>
+      </div>
+      <!-- ぱんくずリスト -->
+      <div class="topnav">
+        <ul class="topnav__list">
+          <li class="topnav__item">ホーム</li>
+          <li class="topnav__item">お知らせ</li>
+        </ul>
+      </div>
+      <div class="container__news">
+        <article class="news__contents">
+          <div class="news__content"></div>
+        </article>
+        <aside class="category">
+          <p class="category__title">カテゴリ</p>
+          <ul class="category__list">
+            <li class="category__item">営業日時</li>
+            <li class="category__item">キャンペーン</li>
+            <li class="category__item">その他</li>
+          </ul>
+        </aside>
+      </div>
+      <div class="pager">１　２　３　… ６</div>
+      <!-- アクセス -->
+      <section class="access">
+        <div class="container__access">
+          <h2 class="h2__title">お気軽にご来院ください</h2>
+          <div class="access__contents">
+            <div class="access__content">
+              <p class="access__trans">JR「秋葉原駅」より徒歩1分</p>
+              <p class="access__adress">
+                〒101-0022<br />東京都千代田区神田練塀町300番地<br />住友不動産秋葉原駅前ビル5F
+              </p>
+              <p class="access__tel">tel: <span>03-1234-5678</span></p>
+              <table class="access__table">
+                <tr class="access__table-row">
+                  <th class="access__table-header access__table-time">
+                    営業時間
+                  </th>
+                  <th class="access__table-header">月</th>
+                  <th class="access__table-header">火</th>
+                  <th class="access__table-header">水</th>
+                  <th class="access__table-header">木</th>
+                  <th class="access__table-header">金</th>
+                  <th class="access__table-header">土</th>
+                  <th class="access__table-header">日</th>
+                </tr>
+                <tr class="access__table-row">
+                  <td class="access__table-data access__table-time">
+                    9:00〜12:30
+                  </td>
+                  <td class="access__table-data">●</td>
+                  <td class="access__table-data">●</td>
+                  <td class="access__table-data">−</td>
+                  <td class="access__table-data">●</td>
+                  <td class="access__table-data">●</td>
+                  <td class="access__table-data">●</td>
+                  <td class="access__table-data">●</td>
+                </tr>
+                <tr class="access__table-row">
+                  <td class="access__table-data access__table-time">
+                    15:30〜20:00
+                  </td>
+                  <td class="access__table-data">●</td>
+                  <td class="access__table-data">●</td>
+                  <td class="access__table-data">−</td>
+                  <td class="access__table-data">●</td>
+                  <td class="access__table-data">●</td>
+                  <td class="access__table-data">●</td>
+                  <td class="access__table-data">●</td>
+                </tr>
+              </table>
+              <a href="contact.html" class="access__link"
+                >ご予約・お問い合わせはこちらから</a
+              >
+            </div>
+            <div class="access__map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.8275574319946!2d135.8248718263107!3d34.684301422925415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60013a29d1dd2621%3A0x540d42181874f344!2z6L-R6YmE5aWI6Imv6aeF!5e0!3m2!1sja!2sjp!4v1749909255471!5m2!1sja!2sjp"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- フッター -->
+    <footer>
+      <div class="footer__contents">
+        <div class="footer__logo">
+          <a href="index.html">
+            <img
+              src="images/top/logo.svg"
+              alt="SAMURAI整体院のロゴ"
+              class="footer__logo-img"
+            />
+          </a>
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="index.html" class="footer__nav-link">TOP</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="about.html" class="footer__nav-link">当院について</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="price.html" class="footer__nav-link">コース・料金</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="news.html" class="footer__nav-link">お知らせ</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="voice.html" class="footer__nav-link">お客様の声</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="contact.html" class="footer__nav-link"
+                >ご予約・お問い合わせ</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__copyright">
+        <small>&copy;2023 SAMURAI整体院</small>
+      </div>
+      <a id="back-btn" href="#">
+        <div class="back-btn-arrow"></div>
+      </a>
+    </footer>
+    <!-- JavaScript読み込み -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
