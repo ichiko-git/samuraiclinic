@@ -308,6 +308,7 @@ a:hover {
   color: var(--color-moss-green);
 }
 .subvisual__title--ja {
+  display: inline-block;
   font-size: 18px;
   color: var(--color-moss-green);
   margin-top: 2px;
@@ -1133,6 +1134,78 @@ a:hover {
   line-height: 1.4;
 }
 
+/* news.html */
+.container__news {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 16px;
+  max-width: 976px;
+  margin: 0 auto;
+}
+.news__contents {
+  max-width: 752px;
+}
+.news__content {
+  width: 100%;
+  margin-bottom: 64px;
+  display: flex;
+  gap: 32px;
+}
+.news__content-image {
+  width: 320px;
+  height: 200px;
+  flex-shrink: 0;
+}
+.news__content-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.news__content-desc {
+  /* max-width: 368px; */
+}
+.news__content-desc > div {
+  display: flex;
+  gap: 30px;
+}
+.news__content-title {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.category {
+  flex-shrink: 0;
+}
+.category__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+.category__list {
+  list-style: none;
+  list-style-position: inside;
+}
+.category__item {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.category__item:last-child {
+  margin-bottom: 0;
+}
+.pager {
+  text-align: center;
+  color: var(--color-moss-green);
+  margin-bottom: 193px;
+}
+.pager span {
+  display: inline-block;
+  background-color: var(--color-moss-green);
+  color: white;
+  width: 24px;
+  height: 24px;
+}
+
 /* スマートフォン用（768px以下） */
 @media screen and (max-width: 768px) {
   /* 共通パーツ */
@@ -1532,5 +1605,35 @@ a:hover {
   }
   .selfpay__item {
     margin-bottom: 12px;
+  }
+
+  /* news.html */
+  .container__news {
+    flex-direction: column;
+    padding: 32px 16px;
+  }
+  .news__contents {
+    width: 100%;
+  }
+  .news__content {
+    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .news__content-image {
+    width: 100%;
+    height: auto;
+  }
+  .news__content-desc {
+    max-width: 100%;
+  }
+  .news__content-title {
+    font-size: 18px;
+  }
+  .category__title {
+    font-size: 18px;
+  }
+  .pager {
+    margin-bottom: 64px;
   }
 }
