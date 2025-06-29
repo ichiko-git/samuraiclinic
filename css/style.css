@@ -33,6 +33,7 @@ a {
 }
 a:hover {
   opacity: 0.6;
+  transition: opacity 0.7s;
 }
 
 /* 共通パーツ */
@@ -40,10 +41,6 @@ a:hover {
   display: inline-block;
   padding: 14px 16px;
   border-radius: 4px;
-}
-.container {
-  max-width: 800px;
-  margin: 0 auto;
 }
 .h2__title {
   text-align: center;
@@ -458,6 +455,7 @@ a:hover {
   display: flex;
   gap: 80px;
   flex-direction: row-reverse;
+  justify-content: center;
   align-items: center;
 }
 .imagegroup {
@@ -897,6 +895,7 @@ a:hover {
   display: flex;
   gap: 80px;
   flex-direction: row-reverse;
+  justify-content: center;
   align-items: flex-start;
 }
 .imagegroup {
@@ -1193,7 +1192,7 @@ a:hover {
 .pager {
   text-align: center;
   color: var(--color-moss-green);
-  margin-bottom: 193px;
+  margin-bottom: 81px;
 }
 .pager span {
   display: inline-block;
@@ -1290,6 +1289,43 @@ a:hover {
   width: 20px;
   height: 20px;
   margin-left: 8px;
+}
+
+/* voice.html */
+.container__voice2 {
+  margin: 0 auto;
+  max-width: 868px;
+  padding: 64px 16px 0;
+}
+.voice__contents {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-bottom: 64px;
+}
+.voice__content {
+  display: flex;
+  gap: 48px;
+}
+.voice__image {
+  max-width: 180px;
+  max-height: 180px;
+  flex-shrink: 0;
+}
+.voice__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.voice__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-dark-green);
+  margin-bottom: 24px;
+}
+.voice__text {
+  line-height: 1.4;
 }
 
 /* スマートフォン用（768px以下） */
@@ -1720,7 +1756,7 @@ a:hover {
     font-size: 18px;
   }
   .pager {
-    margin-bottom: 64px;
+    margin-bottom: 32px;
   }
 
   /* page-name.html */
@@ -1773,5 +1809,22 @@ a:hover {
   }
   .next-news::after {
     font-size: 16px;
+  }
+
+  /* voice.html */
+  .container__voice2 {
+    padding: 32px 16px 0;
+  }
+  .voice__contents {
+    gap: 48px;
+    margin-bottom: 32px;
+  }
+  .voice__content {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .voice__title {
+    text-align: center;
   }
 }
