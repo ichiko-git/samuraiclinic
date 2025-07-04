@@ -1391,7 +1391,7 @@ a:hover {
   top: 12px;
   right: 16px;
 }
-.contact__form-btn {
+.contact__btn {
   display: block;
   margin: 0 auto;
   width: 240px;
@@ -1401,6 +1401,30 @@ a:hover {
   color: white;
   font-size: 14px;
   font-weight: bold;
+}
+
+/* contact-thanks.html */
+.container__thanks {
+  margin: 32px auto 162px;
+  padding: 62px 125px;
+  width: 100%;
+  max-width: 752px;
+  border: solid 1px #ccc;
+  text-align: center;
+  overflow-x: hidden;
+}
+.thanks__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-dark-green);
+  margin-bottom: 24px;
+}
+.thanks__title br {
+  display: none;
+}
+.thanks__text {
+  font-weight: 500;
+  margin-bottom: 32px;
 }
 
 /* スマートフォン用（768px以下） */
@@ -1908,7 +1932,28 @@ a:hover {
     padding-left: 16px;
   }
   /* お問い合わせフォーム */
-  .contact__form-btn {
+  .contact__btn {
     width: 100%;
+  }
+
+  /* contact-thanks.html */
+  /* サンクスページ */
+  .thanks {
+    padding: 0 16px;
+  }
+  .container__thanks {
+    margin: 32px auto 64px;
+    padding: 16px 16px;
+    max-width: 100%;
+  }
+  .thanks__title {
+    margin-bottom: 16px;
+  }
+  .thanks__title br {
+    display: inline-block;
+  }
+  .thanks__text {
+    width: 100%;
+    text-align: center;
   }
 }
