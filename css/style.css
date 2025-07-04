@@ -294,7 +294,7 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: left bottom;
+  object-position: left;
 }
 .subvisual__title {
   margin-left: 64px;
@@ -1328,6 +1328,81 @@ a:hover {
   line-height: 1.4;
 }
 
+/* contact.html */
+.container__contact {
+  padding: 32px 16px;
+  padding-left: 10%;
+  margin: 0 auto;
+}
+.contact__title {
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--color-dark-green);
+  margin-bottom: 24px;
+}
+.contact__text {
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+.contact__tel {
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--color-dark-green);
+}
+/* お問い合わせフォーム */
+.contact__form-form {
+  width: 100%;
+  max-width: 752px;
+}
+.contact__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.contact__form-label {
+  font-weight: bold;
+}
+.contact__form-input,
+.contact__form-textarea,
+.contact__select {
+  border: solid 1px rgba(0, 0, 0, 0.36);
+  width: 100%;
+  height: 44px;
+}
+.contact__form-textarea {
+  height: 140px;
+}
+.contact__form-select {
+  width: 100%;
+  height: 100%;
+}
+.contact__select {
+  position: relative;
+}
+.contact__select::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  transform: rotate(-45deg);
+  top: 12px;
+  right: 16px;
+}
+.contact__form-btn {
+  display: block;
+  margin: 0 auto;
+  width: 240px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: var(--color-plane-green);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 /* スマートフォン用（768px以下） */
 @media screen and (max-width: 768px) {
   /* 共通パーツ */
@@ -1385,7 +1460,7 @@ a:hover {
   }
   .subvisual__image {
     width: calc(100% - 38px);
-    max-height: 300px;
+    height: 300px;
     position: absolute;
     top: 0;
     right: 0;
@@ -1826,5 +1901,14 @@ a:hover {
   }
   .voice__title {
     text-align: center;
+  }
+
+  /* contact.html */
+  .container__contact {
+    padding-left: 16px;
+  }
+  /* お問い合わせフォーム */
+  .contact__form-btn {
+    width: 100%;
   }
 }
