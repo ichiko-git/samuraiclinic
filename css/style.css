@@ -37,6 +37,11 @@ a:hover {
 }
 
 /* 共通パーツ */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
 .btn {
   display: inline-block;
   padding: 14px 16px;
@@ -1137,9 +1142,7 @@ a:hover {
 .container__news {
   display: flex;
   justify-content: space-between;
-  padding: 32px 16px;
   max-width: 976px;
-  margin: 0 auto;
 }
 .news__contents {
   max-width: 752px;
@@ -1207,8 +1210,6 @@ a:hover {
   display: flex;
   justify-content: space-between;
   max-width: 976px;
-  margin: 0 auto;
-  padding: 32px 16px;
   gap: 64px;
 }
 .page__content {
@@ -1330,9 +1331,7 @@ a:hover {
 
 /* contact.html */
 .container__contact {
-  padding: 32px 16px;
   padding-left: 10%;
-  margin: 0 auto;
 }
 .contact__title {
   font-weight: bold;
