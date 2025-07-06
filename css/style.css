@@ -107,22 +107,27 @@ a:hover {
   margin-left: -12px;
 }
 
-/* ヘッダー トップページ*/
-.header--top {
+/* ヘッダー*/
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 64px;
   width: 100%;
   padding: 0 32px;
+}
+.header--top {
   background-color: rgba(0, 0, 0, 0);
-
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
 }
+body.admin-bar .header--top {
+  top: 32px;
+}
+
 .header__logo {
   max-width: 240px;
   min-width: 196px;
@@ -144,31 +149,12 @@ a:hover {
   display: inline-block;
   font-size: 14px;
   text-decoration: none;
+}
+.header__nav-link--top {
   color: white;
   text-shadow: 1px 1px 0 rgba(70, 132, 89, 0.25);
 }
 .btn--reserve {
-  background-color: var(--color-dark-green);
-  color: #fff;
-}
-
-/* ヘッダー（下層ページ） */
-.header--sub {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
-  width: 100%;
-  padding: 0 32px;
-}
-.header--sub .header__nav-link {
-  display: inline-block;
-  font-size: 14px;
-  text-decoration: none;
-  color: var(--color-moss-green);
-  text-shadow: none;
-}
-.header--sub .btn--reserve {
   background-color: var(--color-dark-green);
   color: #fff;
 }
@@ -354,6 +340,7 @@ a:hover {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .mv__catch-text {
   writing-mode: vertical-rl;
   font-family: var(--font-family-shippori);

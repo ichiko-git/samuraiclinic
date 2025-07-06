@@ -28,7 +28,7 @@
   </head>
   <body>
     <!-- ヘッダー -->
-    <header class="header header--top">
+    <header class="header--top">
       <h1 class="header__logo">
         <a href="index.html">
           <img
@@ -48,22 +48,22 @@
       <nav class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a href="index.html" class="header__nav-link header__nav-link--top">ホーム</a>
+            <a href="index.html" class="header__nav-link">ホーム</a>
           </li>
           <li class="header__nav-item">
-            <a href="about.html" class="header__nav-link header__nav-link--top">当院について</a>
+            <a href="about.html" class="header__nav-link">当院について</a>
           </li>
           <li class="header__nav-item">
-            <a href="price.html" class="header__nav-link header__nav-link--top">コース・料金</a>
+            <a href="price.html" class="header__nav-link">コース・料金</a>
           </li>
           <li class="header__nav-item">
-            <a href="news.html" class="header__nav-link header__nav-link--top">お知らせ</a>
+            <a href="news.html" class="header__nav-link">お知らせ</a>
           </li>
           <li class="header__nav-item">
-            <a href="voice.html" class="header__nav-link header__nav-link--top">お客様の声</a>
+            <a href="voice.html" class="header__nav-link">お客様の声</a>
           </li>
           <li class="header__nav-item">
-            <a href="contact.html" class="header__nav-link header__nav-link--top btn btn--reserve"
+            <a href="contact.html" class="header__nav-link btn btn--reserve"
               >ご予約・お問い合わせ</a
             >
           </li>
