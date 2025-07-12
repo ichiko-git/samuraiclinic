@@ -107,6 +107,11 @@ a:hover {
   margin-left: -12px;
 }
 
+/* WordPress投稿記事のスタイル */
+.wp-block-heading {
+  margin-top: 16px;
+}
+
 /* ヘッダー*/
 .header {
   display: flex;
@@ -1191,6 +1196,10 @@ body.admin-bar .header--top {
   width: 24px;
   height: 24px;
 }
+.pager .page-numbers {
+  display: inline-block;
+  margin-right: 16px;
+}
 
 /* page-name.html */
 .container__page {
@@ -1444,8 +1453,8 @@ body.admin-bar .header--top {
   }
 
   /* ヘッダー */
-  .header--top {
-    padding: 0 20px;
+  body.admin-bar .header--top {
+    top: 46px;
   }
   .header__logo {
     max-width: 196px;
@@ -1455,9 +1464,6 @@ body.admin-bar .header--top {
   }
   .header__hamburger--open {
     display: block;
-  }
-  .header--sub {
-    padding: 0 20px;
   }
 
   /* サブビジュアル */

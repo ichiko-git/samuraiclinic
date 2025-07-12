@@ -77,17 +77,43 @@
           <h2 class="news__title--en">News</h2>
           <span class="news__title--ja">お知らせ</span>
         </div>
+        <?php
+        // お知らせで表示する投稿を1件取得
+        $args = array(
+          // 投稿タイプ
+          'post_type'      => 'post',
+          // 1ページに表示する投稿数
+          'posts_per_page' => 1,
+        );
+        // データの取得
+        $posts = get_posts($args);
+        // ループ処理
+        foreach($posts as $post):
+        ?>
         <article class="news__item">
           <div>
-            <time class="news__item-date" datetime="2022/12/21"
-              >2022/12/21</time
-            >
-            <div class="news__item-tag">営業日時</div>
+            <time class="news__item-date" datetime="<?php echo get_the_date(); ?>">
+              <?php echo get_the_date(); ?>
+            </time>
+            <div class="news__item-tag">
+              <?php
+              $categories = get_the_category();
+              if ( ! empty( $categories ) ) {
+                echo esc_html( $categories[0]->name );
+              }
+              ?>
+            </div>
           </div>
-          <a href="page-name.html" class="news__item-title"
-            >年末年始の営業時間について</a
-          >
+          <a href="<?php the_permalink(); ?>" class="news__item-title">
+            <?php the_title(); ?>
+          </a>
         </article>
+        <?php
+        // ループ処理
+        endforeach;
+        // 使用した投稿データをリセット
+        wp_reset_postdata();
+        ?>
         <div class="news__footer">
           <a href="<?php echo home_url(); ?>/news" class="news__link">→ お知らせ一覧へ</a>
         </div>
