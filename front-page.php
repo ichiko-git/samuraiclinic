@@ -218,51 +218,35 @@
             痛みの改善に加えて自分で予防も<br />できるようになりました
           </p>
           <div class="voice__items">
+            <?php
+            //取得したい投稿記事などの条件を引数として渡す
+            $args = array(
+              // 投稿タイプ
+              'post_type'      => 'voice',
+              // 1ページに表示する投稿数
+              'posts_per_page' => 3,
+            );
+            // データの取得
+            $posts = get_posts($args);
+            ?>
+            <?php foreach($posts as $post) : ?>
             <div class="voice__item">
               <div class="voice__item-image">
                 <img
-                  src="<?php echo get_template_directory_uri();?>/images/top/TOP-voice-user1.png"
+                  src="<?php the_post_thumbnail_url();?>"
                   alt="S・K様　30代女性"
                   class="voice__item-img"
                 />
               </div>
               <div class="voice__item-desc">
-                <h3 class="voice__item-name">S・K様　30代女性</h3>
+                <h3 class="voice__item-name"><?php the_title(); ?></h3>
                 <p class="voice__item-text">
-                  1ヶ月で腰の痛みが軽減しました。自分で自宅でできるケアも教えていただき、お任せしてよかったです。
+                  <?php echo wp_trim_words($post->post_content, 65, '...'); ?>
                 </p>
               </div>
             </div>
-            <div class="voice__item">
-              <div class="voice__item-image">
-                <img
-                  src="<?php echo get_template_directory_uri();?>/images/top/TOP-voice-user2.png"
-                  alt="T・M様　40代男性"
-                  class="voice__item-img"
-                />
-              </div>
-              <div class="voice__item-desc">
-                <h3 class="voice__item-name">T・M様　40代男性</h3>
-                <p class="voice__item-text">
-                  マラソンで右膝が痛むので、施術を受けています。なぜ痛みが生じるのかを身体の仕組みから教えていただき、普段の練習メニューも工夫できています。
-                </p>
-              </div>
-            </div>
-            <div class="voice__item">
-              <div class="voice__item-image">
-                <img
-                  src="<?php echo get_template_directory_uri();?>/images/top/TOP-voice-user3.png"
-                  alt="S・T様　60代女性"
-                  class="voice__item-img"
-                />
-              </div>
-              <div class="voice__item-desc">
-                <h3 class="voice__item-name">S・T様　60代女性</h3>
-                <p class="voice__item-text">
-                  転倒して足を骨折したのをきっかけに、痛みの軽減と筋肉の衰えを防ぐための方針を立てていただいています。今は毎日元気に近所を散歩できています。
-                </p>
-              </div>
-            </div>
+            <?php endforeach; ?>
+            <?php wp_reset_postdata(); ?>
           </div>
           <a href="<?php echo home_url(); ?>/voice" class="voice__link">→ お客様の声一覧へ</a>
         </div>
