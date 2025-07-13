@@ -34,11 +34,13 @@
           <?php while(have_posts()) : the_post(); ?>
           <div class="news__content">
             <div class="news__content-image">
-              <img
-                src="<?php the_post_thumbnail_url();?>"
-                alt="投稿記事サンプル"
-                class="news__content-img"
-              />
+              <a href="<?php the_permalink(); ?>">
+                <img
+                  src="<?php the_post_thumbnail_url();?>"
+                  alt="投稿記事サンプル"
+                  class="news__content-img"
+                />
+              </a>
             </div>
             <div class="news__content-desc">
               <h2 class="news__content-title">

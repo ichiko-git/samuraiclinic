@@ -35,6 +35,9 @@ a:hover {
   opacity: 0.6;
   transition: opacity 0.7s;
 }
+textarea {
+  max-width: 60%;
+}
 
 /* 共通パーツ */
 .container {
@@ -110,6 +113,20 @@ a:hover {
 /* WordPress投稿記事のスタイル */
 .wp-block-heading {
   margin-top: 16px;
+}
+.wpforms-submit-container {
+  max-width: 60% !important;
+}
+.wpforms-submit {
+  display: block !important;
+  margin: 0 auto !important;
+  width: 240px !important;
+  height: 48px !important;
+  border-radius: 4px !important;
+  background-color: var(--color-plane-green) !important;
+  color: white !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
 }
 
 /* ヘッダー*/
@@ -986,7 +1003,8 @@ body.admin-bar .header--top {
   color: var(--color-moss-green);
 }
 .point__items {
-  margin-top: 64px;
+  max-width: 1056px;
+  margin: 64px auto 0;
   display: flex;
   gap: 48px;
 }
@@ -1391,6 +1409,7 @@ body.admin-bar .header--top {
   margin: 0 auto;
   width: 240px;
   height: 48px;
+  line-height: 48px;
   border-radius: 4px;
   background-color: var(--color-plane-green);
   color: white;

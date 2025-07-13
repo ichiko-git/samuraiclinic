@@ -204,7 +204,7 @@
               </div>
             </div>
           </div>
-          <a href="<?php echo home_url(); ?>/price" class="course__link">→ コース・料金詳細へ</a>
+          <a href="<?php echo home_url(); ?>/course" class="course__link">→ コース・料金詳細へ</a>
         </div>
       </section>
       <!-- お客様の声 -->
