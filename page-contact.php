@@ -22,10 +22,11 @@
       </div>
       <!-- ぱんくずリスト -->
       <div class="topnav">
-        <ul class="topnav__list">
-          <li class="topnav__item">ホーム</li>
-          <li class="topnav__item">ご予約・お問い合わせ</li>
-        </ul>
+        <div class="topnav__list">
+        <?php if ( function_exists( 'bcn_display' ) ) {
+          bcn_display();
+        } ?>
+        </div>
       </div>
       <div class="container container__contact">
         <!-- お電話でのご予約・お問い合わせ -->

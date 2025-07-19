@@ -22,50 +22,62 @@
       </div>
       <!-- ぱんくずリスト -->
       <div class="topnav">
-        <ul class="topnav__list">
-          <li class="topnav__item">ホーム</li>
-          <li class="topnav__item">お知らせ</li>
-        </ul>
+        <div class="topnav__list">
+        <?php if ( function_exists( 'bcn_display' ) ) {
+          bcn_display();
+        } ?>
+        </div>
       </div>
       <div class="container container__news">
-        <!-- ニュース記事一覧 -->
-        <article class="news__contents">
-        <?php if(have_posts()) : ?>
-          <?php while(have_posts()) : the_post(); ?>
-          <div class="news__content">
-            <div class="news__content-image">
-              <a href="<?php the_permalink(); ?>">
-                <img
-                  src="<?php the_post_thumbnail_url();?>"
-                  alt="投稿記事サンプル"
-                  class="news__content-img"
-                />
-              </a>
-            </div>
-            <div class="news__content-desc">
-              <h2 class="news__content-title">
-                <a href="<?php the_permalink(); ?>" class="news__content-link">
-                  <?php the_title(); ?>
+        <!-- ニュース記事一覧＋ページネーション -->
+        <div class="news-list-area">
+          <article class="news__contents">
+          <?php if(have_posts()) : ?>
+            <?php while(have_posts()) : the_post(); ?>
+            <div class="news__content">
+              <div class="news__content-image">
+                <a href="<?php the_permalink(); ?>">
+                  <img
+                    src="<?php the_post_thumbnail_url();?>"
+                    alt="投稿記事サンプル"
+                    class="news__content-img"
+                  />
                 </a>
-              </h2>
-              <div>
-                <time datetime="<?php echo get_the_date(); ?>" class="news__content-date">
-                  <?php echo get_the_date(); ?>
-                </time>
-                <div class="news__item-tag">
-                  <?php
-                    $categories = get_the_category();
-                    if ( ! empty( $categories ) ) {
-                      echo esc_html( $categories[0]->name );
-                    }
-                  ?>
+              </div>
+              <div class="news__content-desc">
+                <h2 class="news__content-title">
+                  <a href="<?php the_permalink(); ?>" class="news__content-link">
+                    <?php the_title(); ?>
+                  </a>
+                </h2>
+                <div>
+                  <time datetime="<?php echo get_the_date(); ?>" class="news__content-date">
+                    <?php echo get_the_date(); ?>
+                  </time>
+                  <div class="news__item-tag">
+                    <?php
+                      $categories = get_the_category();
+                      if ( ! empty( $categories ) ) {
+                        echo esc_html( $categories[0]->name );
+                      }
+                    ?>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <?php endwhile; ?>
-          <?php endif; ?>
-        </article>
+            <?php endwhile; ?>
+            <?php endif; ?>
+          </article>
+          <!-- ページネーション -->
+          <?php
+            the_posts_pagination(array(
+              'mid_size'  => 1,
+              'prev_text' => '',
+              'next_text' => '',
+              'class'     => 'pager'
+            ));
+          ?>
+        </div>
         <!-- サイドバー -->
         <aside class="category">
           <p class="category__title">カテゴリ</p>
@@ -76,13 +88,5 @@
           </ul>
         </aside>
       </div>
-      <!-- ページネーション -->
-      <?php
-        the_posts_pagination(array(
-          'mid_size'  => 1,
-          'prev_text' => '',
-          'next_text' => '',
-          'class'     => 'pager'
-        ));
-      ?>
+      
 <?php get_footer(); ?>

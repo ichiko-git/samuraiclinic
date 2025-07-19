@@ -22,10 +22,11 @@
       </div>
       <!-- ぱんくずリスト -->
       <div class="topnav">
-        <ul class="topnav__list">
-          <li class="topnav__item">ホーム</li>
-          <li class="topnav__item">コース・料金</li>
-        </ul>
+        <div class="topnav__list">
+        <?php if ( function_exists( 'bcn_display' ) ) {
+          bcn_display();
+        } ?>
+        </div>
       </div>
       <!-- コース・料金 -->
       <section class="price">

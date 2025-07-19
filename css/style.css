@@ -1517,6 +1517,14 @@ body.admin-bar .header--top {
   /* ぱんくずリスト */
   .topnav {
     height: 44px;
+    padding-left: 5%;
+  }
+  .topnav__list span:last-child {
+    display: inline-block;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* メインビジュアル */
@@ -1945,6 +1953,12 @@ body.admin-bar .header--top {
   /* お問い合わせフォーム */
   .contact__btn {
     width: 100%;
+  }
+  .wpforms-submit-container {
+    max-width: 100% !important;
+  }
+  .wpforms-submit {
+    width: 100% !important;
   }
 
   /* contact-thanks.html */

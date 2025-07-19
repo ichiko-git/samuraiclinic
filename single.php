@@ -22,44 +22,57 @@
       </div>
       <!-- ぱんくずリスト -->
       <div class="topnav">
-        <ul class="topnav__list">
-          <li class="topnav__item">ホーム</li>
-          <li class="topnav__item">お知らせ</li>
-          <li class="topnav__item">お知らせ詳細</li>
-        </ul>
+        <div class="topnav__list">
+        <?php if ( function_exists( 'bcn_display' ) ) {
+          bcn_display();
+        } ?>
+        </div>
       </div>
       <div class="container container__page">
+        <div class="news-page-area">
         <!-- 投稿記事内容 -->
         <?php if(have_posts()) : ?>
           <?php while(have_posts()) : the_post(); ?>
-        <article class="page__content">
-          <h1 class="page__content-title">
-            <?php the_title(); ?>
-          </h1>
-          <div class="page__content-item">
-            <time datetime="<?php echo get_the_date(); ?>" class="page__content-date">
-              <?php echo get_the_date(); ?>
-            </time>
-            <div class="news__item-tag">
-              <?php
-                $categories = get_the_category();
-                if ( ! empty( $categories ) ) {
-                  echo esc_html( $categories[0]->name );
-                }
-              ?>
+          <article class="page__content">
+            <h1 class="page__content-title">
+              <?php the_title(); ?>
+            </h1>
+            <div class="page__content-item">
+              <time datetime="<?php echo get_the_date(); ?>" class="page__content-date">
+                <?php echo get_the_date(); ?>
+              </time>
+              <div class="news__item-tag">
+                <?php
+                  $categories = get_the_category();
+                  if ( ! empty( $categories ) ) {
+                    echo esc_html( $categories[0]->name );
+                  }
+                ?>
+              </div>
             </div>
+            <div class="page__content-image">
+              <img
+                src="<?php the_post_thumbnail_url();?>"
+                alt="<?php the_title(); ?>"
+                class="page__content-img"
+              />
+            </div>
+            <?php the_content(); ?>
+          </article>
+            <?php endwhile; ?>
+          <?php endif; ?>
+
+          <!-- ページネーション -->
+          <div class="page__link">
+            <?php if(get_previous_post_link()) : ?>
+            <a href="<?php echo get_permalink(get_previous_post()); ?>" class="prev-news">前の記事へ</a>
+            <?php endif; ?>
+            <a href="<?php echo home_url(); ?>/news"><span>お知らせ</span>一覧</a>
+            <?php if(get_next_post_link()) : ?>
+            <a href="<?php echo get_permalink(get_next_post()); ?>" class="next-news">次の記事へ</a>
+            <?php endif; ?>
           </div>
-          <div class="page__content-image">
-            <img
-              src="<?php the_post_thumbnail_url();?>"
-              alt="<?php the_title(); ?>"
-              class="page__content-img"
-            />
-          </div>
-          <?php the_content(); ?>
-        </article>
-          <?php endwhile; ?>
-        <?php endif; ?>
+        </div>
         <!-- サイドバー -->
         <aside class="category">
           <p class="category__title">カテゴリ</p>
@@ -70,14 +83,5 @@
           </ul>
         </aside>
       </div>
-      <!-- ページネーション -->
-      <div class="page__link">
-        <?php if(get_previous_post_link()) : ?>
-          <a href="<?php echo get_permalink(get_previous_post()); ?>" class="prev-news">前の記事へ</a>
-        <?php endif; ?>
-        <a href="<?php echo home_url(); ?>/news"><span>お知らせ</span>一覧</a>
-        <?php if(get_next_post_link()) : ?>
-        <a href="<?php echo get_permalink(get_next_post()); ?>" class="next-news">次の記事へ</a>
-        <?php endif; ?>
-        </div>
+      
 <?php get_footer(); ?>
