@@ -7,12 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // メニューを開く
   hamburgerOpen.addEventListener("click", () => {
+    document.body.classList.add("drawer-open");
     drawer.classList.add("is-open");
     overlay.classList.add("is-visible");
   });
 
   // メニューを閉じる
   hamburgerClose.addEventListener("click", () => {
+    document.body.classList.remove("drawer-open");
     drawer.classList.remove("is-open");
     overlay.classList.remove("is-visible");
   });

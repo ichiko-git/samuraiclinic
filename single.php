@@ -41,13 +41,24 @@
               <time datetime="<?php echo get_the_date(); ?>" class="page__content-date">
                 <?php echo get_the_date(); ?>
               </time>
-              <div class="news__item-tag">
-                <?php
-                  $categories = get_the_category();
-                  if ( ! empty( $categories ) ) {
-                    echo esc_html( $categories[0]->name );
+              <?php
+                $categories = get_the_category();
+                $tag_class = 'news__item-tag';
+                $tag_label = '';
+                if ( ! empty( $categories ) ) {
+                  $cat_name = $categories[0]->name;
+                  $tag_label = esc_html($cat_name);
+                  if ($cat_name === '営業日時') {
+                    $tag_class .= ' news__item-tag--green';
+                  } elseif ($cat_name === 'キャンペーン') {
+                    $tag_class .= ' news__item-tag--orange';
+                  } elseif ($cat_name === 'その他') {
+                    $tag_class .= ' news__item-tag--blue';
                   }
-                ?>
+                }
+              ?>
+              <div class="<?php echo $tag_class ?>">
+                <?php echo $tag_label; ?>
               </div>
             </div>
             <div class="page__content-image">

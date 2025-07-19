@@ -27,6 +27,13 @@ body {
   color: black;
   font-size: 16px;
 }
+/* ドロワーメニューオープン時スクロール禁止にする */
+body.drawer-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
 a {
   color: black;
   text-decoration: none;
@@ -95,7 +102,7 @@ textarea {
   position: fixed;
   bottom: 128px;
   right: 34px;
-  z-index: 100;
+  z-index: 5;
 }
 .back-btn-arrow {
   width: 24px;
@@ -237,6 +244,12 @@ body.admin-bar .header--top {
 .header__drawer.is-open {
   transform: translateY(0);
 }
+body.admin-bar .header__drawer.is-open {
+  top: 46px;
+}
+body.admin-bar .header--top .header__drawer.is-open {
+  top: 0;
+}
 .header__drawer-menu {
   height: 64px;
   display: flex;
@@ -280,6 +293,7 @@ body.admin-bar .header--top {
   top: 0;
   background-color: rgba(0, 0, 0, 0.6);
   pointer-events: none;
+  z-index: 20;
 }
 .overlay.is-visible {
   opacity: 1;
@@ -442,6 +456,15 @@ body.admin-bar .header--top {
   border-radius: 4px;
   display: flex;
   gap: 10px;
+}
+.news__item-tag--green {
+  background-color: var(--color-moss-green);
+}
+.news__item-tag--orange {
+  background-color: #e2a70e;
+}
+.news__item-tag--blue {
+  background-color: #4eb8bf;
 }
 .news__item-title {
   display: inline-block;

@@ -95,13 +95,24 @@
             <time class="news__item-date" datetime="<?php echo get_the_date(); ?>">
               <?php echo get_the_date(); ?>
             </time>
-            <div class="news__item-tag">
-              <?php
+            <?php
               $categories = get_the_category();
+              $tag_class = 'news__item-tag';
+              $tag_label = '';
               if ( ! empty( $categories ) ) {
-                echo esc_html( $categories[0]->name );
+                $cat_name = $categories[0]->name;
+                $tag_label = esc_html($cat_name);
+                if ($cat_name === '営業日時') {
+                  $tag_class .= ' news__item-tag--green';
+                } elseif ($cat_name === 'キャンペーン') {
+                  $tag_class .= ' news__item-tag--orange';
+                } elseif ($cat_name === 'その他') {
+                  $tag_class .= ' news__item-tag--blue';
+                }
               }
-              ?>
+            ?>
+            <div class="<?php echo $tag_class ?>">
+              <?php echo $tag_label; ?>
             </div>
           </div>
           <a href="<?php the_permalink(); ?>" class="news__item-title">
