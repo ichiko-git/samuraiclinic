@@ -652,6 +652,8 @@ body.admin-bar .header--top .header__drawer.is-open {
 }
 .course__item-img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 24px;
 }
 .course__item-desc {
