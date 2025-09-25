@@ -1,6 +1,5 @@
-# SAMURAI整体院
+# 整体院のデモサイト
 
-整体院のデモサイト<br>
 URL：http://wp-demo3.ichiko-works.com/
 
 ## 概要
